@@ -18,4 +18,12 @@ public class SpriteChanger : MonoBehaviour
     {
         
     }
+
+    ///<summary>
+    ///Change the color of the sprite to the color input
+    ///</summary>
+    public void SampleMethod()
+    {
+        //spriteRenderer.color = newColor;
+    }
 }
