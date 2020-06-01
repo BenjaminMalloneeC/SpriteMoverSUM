@@ -18,25 +18,35 @@ public class SpriteMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Gameobject movement with arrow keys
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-            transform.position += Vector3.up * moveSpeed * Time.deltaTime;
-        }
 
-        if (Input.GetKey(KeyCode.DownArrow))
+        if (Input.GetKeyDown(KeyCode.RightShift))
         {
-            transform.position -= Vector3.up * moveSpeed * Time.deltaTime;
-        }
+            transform.position += Vector3.up * moveSpeed;
 
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            transform.position += Vector3.right * moveSpeed * Time.deltaTime;
+            GetComponent<SpriteRenderer>().color = Color.blue;
         }
-
-        if (Input.GetKey(KeyCode.LeftArrow))
+        else
         {
-            transform.position -= Vector3.right * moveSpeed * Time.deltaTime;
+            //Gameobject movement with arrow keys
+            if (Input.GetKey(KeyCode.UpArrow))
+            {
+                transform.position += Vector3.up * moveSpeed * Time.deltaTime;
+            }
+
+            if (Input.GetKey(KeyCode.DownArrow))
+            {
+                transform.position -= Vector3.up * moveSpeed * Time.deltaTime;
+            }
+
+            if (Input.GetKey(KeyCode.RightArrow))
+            {
+                transform.position += Vector3.right * moveSpeed * Time.deltaTime;
+            }
+
+            if (Input.GetKey(KeyCode.LeftArrow))
+            {
+                transform.position -= Vector3.right * moveSpeed * Time.deltaTime;
+            }
         }
         //Sets the gameobject to the origin
         if (Input.GetKeyDown(KeyCode.Space))
